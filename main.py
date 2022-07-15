@@ -1,8 +1,12 @@
 import random
 from game_logic import find_status as fs
+from gui import make_gui
 import game_logic
 
-'''Placeholder for GUI choice'''
+
+gui = make_gui()
+
+
 
 flag = True
 
