@@ -1,51 +1,53 @@
 import random
+from game_logic import find_status as fs
+import game_logic
 
 '''Placeholder for GUI choice'''
 
 flag = True
 
 while flag:
-    user = input(f"Choose: R - P - S \n").lower()
+    user_input = input(f"Choose: R - P - S \n").lower()
     rock = "r"
     paper = "p"
     scissors = "s"
 
-    gambits = [rock,paper,scissors]
+    gambits = [rock, paper, scissors]
 
     cpu_choice = random.choice(gambits)
-
     print(cpu_choice)
 
-    draw = 0
-    win = 1
-    lose = -1
-
     # Choices #
-    if input == rock:
-        if cpu_choice == rock:
-            status = draw
-        elif cpu_choice == paper:
-            status = lose
-        elif cpu_choice == scissors:
-            status = win
-    elif input == paper:
-        if cpu_choice == rock:
-            status = win
-        elif cpu_choice == paper:
-            status = draw
-        elif cpu_choice == scissors:
-            status = lose
-    elif input == scissors:
-        if cpu_choice == rock:
-            status = lose
-        elif cpu_choice == paper:
-            status = win
-        elif cpu_choice == scissors:
-            status = draw
+    # if user_input == rock:
+    #     if cpu_choice == rock:
+    #         status = draw
+    #     elif cpu_choice == paper:
+    #         status = lose
+    #     else:
+    #         status = win
+    # elif user_input == paper:
+    #     if cpu_choice == rock:
+    #         status = win
+    #     elif cpu_choice == paper:
+    #         status = draw
+    #     else:
+    #         status = lose
+    # elif user_input == scissors:
+    #     if cpu_choice == rock:
+    #         status = lose
+    #     elif cpu_choice == paper:
+    #         status = win
+    #     else:
+    #         status = draw
+    # else:
+    #     print('really.....!!')
 
-    if status == win:
+    curr_status = fs(user_input, cpu_choice)
+
+    if curr_status == game_logic.win:
         print("You won!")
-    elif status == lose:
+    elif curr_status == game_logic.lose:
         print("You lost. :(")
-    elif status == draw:
+    elif curr_status == game_logic.draw:
         print("It's a draw. Try again!")
+
