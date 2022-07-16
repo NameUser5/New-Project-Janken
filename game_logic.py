@@ -2,6 +2,10 @@ ROCK = "r"
 PAPER = "p"
 SCISSORS = "s"
 
+# def user_choice(user_input):
+#     if user_input == ROCK:
+
+gambits = [ROCK, PAPER, SCISSORS]
 
 DRAW = 0
 WIN = 1

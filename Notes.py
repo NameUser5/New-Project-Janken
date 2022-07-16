@@ -1,3 +1,12 @@
+'''https://www.geeksforgeeks.org/looping-through-buttons-in-tkinter/
+
+https://www.youtube.com/watch?v=EPwszp6Ecgs
+https://www.geeksforgeeks.org/python-lambda/
+
+https://foodscienceinstitute.com/2020/12/18/rock-paper-scissors-in-python-part-ii-building-a-gui/
+'''
+
+
 import random
 
 '''Placeholder for GUI'''

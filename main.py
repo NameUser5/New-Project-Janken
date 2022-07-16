@@ -1,7 +1,7 @@
 import random
 from game_logic import find_status as fs
 from gui import make_gui
-import game_logic
+from game_logic import *
 
 
 gui = make_gui()
@@ -11,15 +11,27 @@ gui = make_gui()
 flag = True
 
 while flag:
-    user_input = input(f"Choose: R - P - S \n").lower()
-    rock = "r"
-    paper = "p"
-    scissors = "s"
+    # user_input = input(f"Choose: R - P - S \n").lower()
+    # rock = "r"
+    # paper = "p"
+    # scissors = "s"
+    #
+    # gambits = [rock, paper, scissors]
+    #
+    # cpu_choice = random.choice(gambits)
+    # print(cpu_choice)
 
-    gambits = [rock, paper, scissors]
+    # gambits = [ROCK, PAPER, SCISSORS]
 
-    cpu_choice = random.choice(gambits)
-    print(cpu_choice)
+# # # I am unsure as to where to place these two functions: in the main, logic file, or GUI??? # # #
+    def cpu_choice():
+        choice = random.choice(gambits)
+        return choice
+
+    def user_choice(choice):
+        global click
+
+        cpu_current = cpu_choice()
 
     # Choices #
     # if user_input == rock:
