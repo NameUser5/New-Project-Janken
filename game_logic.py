@@ -3,34 +3,34 @@ PAPER = "p"
 SCISSORS = "s"
 
 
-draw = 0
-win = 1
-lose = -1
+DRAW = 0
+WIN = 1
+LOSE = -1
 
 
 def find_status(user_gambit, cpu_gambit):
     status = -5
     if user_gambit == ROCK:
         if cpu_gambit == ROCK:
-            status = draw
+            status = DRAW
         elif cpu_gambit == PAPER:
-            status = lose
+            status = LOSE
         else:
-            status = win
+            status = WIN
     elif user_gambit == PAPER:
         if cpu_gambit == ROCK:
-            status = win
+            status = WIN
         elif cpu_gambit == PAPER:
-            status = draw
+            status = DRAW
         else:
-            status = lose
+            status = LOSE
     elif user_gambit == SCISSORS:
         if cpu_gambit == ROCK:
-            status = lose
+            status = LOSE
         elif cpu_gambit == PAPER:
-            status = win
+            status = WIN
         else:
-            status = draw
+            status = DRAW
     else:
         print('really.....!!')
     return status
