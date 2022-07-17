@@ -9,6 +9,7 @@ gui = make_gui()
 
 
 flag = True
+score = 0
 
 while flag:
     # user_input = input(f"Choose: R - P - S \n").lower()
@@ -61,9 +62,11 @@ while flag:
     curr_status = fs(user_input, cpu_choice)
 
     if curr_status == game_logic.win:
-        print("You won!")
+        # print("You won!")
+        score +=1
     elif curr_status == game_logic.lose:
-        print("You lost. :(")
+        # print("You lost. :(")
+        score -=1
     elif curr_status == game_logic.draw:
-        print("It's a draw. Try again!")
-
+        # print("It's a draw. Try again!")
+        score +=0

@@ -35,6 +35,6 @@ def find_status(user_gambit, cpu_gambit):
             status = WIN
         else:
             status = DRAW
-    else:
-        print('really.....!!')
+    # else:
+    #     print('really.....!!')
     return status
