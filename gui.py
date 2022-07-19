@@ -9,7 +9,7 @@ def make_gui():
     window.title('Rock, Paper, Scissors!')
 
     window.geometry('580x400')
-    window.config(bg='blue', pady=10, padx=10) #E9FFDB
+    window.config(bg='#0935ce', pady=10, padx=10) #082eaf
     window.resizable(False, False)
 
     banner = tk.Canvas(width=400, height=50)
@@ -21,7 +21,7 @@ def make_gui():
     card_background_photo = tk.PhotoImage(file=r'sprites\Waiting_Question.png')  # change this to list w idx
     card_background_photo = card_background_photo.subsample(3, 3)
 
-    background = tk.Label(image=card_background_photo, bg='blue')
+    background = tk.Label(image=card_background_photo, bg='#0935ce') #082eaf
     background.grid(row=2, column=2, pady=10)
 
 # # # All photos, to be used for label changes (see https://replit.com/@CadetJ/Week12?v=1#gui.py) # # #

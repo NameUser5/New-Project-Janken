@@ -1,7 +1,7 @@
 import random
 from game_logic import find_status as fs
-from gui import make_gui
-from game_logic import *
+from gui import *
+import game_logic
 
 
 gui = make_gui()
@@ -13,16 +13,14 @@ score = 0
 
 while flag:
     # user_input = input(f"Choose: R - P - S \n").lower()
-    # rock = "r"
-    # paper = "p"
-    # scissors = "s"
+    ROCK = "r"
+    PAPER = "p"
+    SCISSORS = "s"
     #
-    # gambits = [rock, paper, scissors]
+    gambits = [ROCK, PAPER, SCISSORS]
     #
     # cpu_choice = random.choice(gambits)
     # print(cpu_choice)
-
-    # gambits = [ROCK, PAPER, SCISSORS]
 
 # # # I am unsure as to where to place these two functions: in the main, logic file, or GUI??? # # #
     def cpu_choice():
@@ -59,14 +57,17 @@ while flag:
     # else:
     #     print('really.....!!')
 
-    curr_status = fs(user_input, cpu_choice)
+    curr_status = fs(user_choice, cpu_choice)
 
-    if curr_status == game_logic.win:
+    if curr_status == game_logic.WIN:
         # print("You won!")
+        gui.banner_text.configure(image=gui.you_win_banner)
         score +=1
-    elif curr_status == game_logic.lose:
+    elif curr_status == game_logic.LOSE:
         # print("You lost. :(")
+        gui.banner_text.configure(image=gui.you_lose_banner)
         score -=1
-    elif curr_status == game_logic.draw:
+    elif curr_status == game_logic.DRAW:
         # print("It's a draw. Try again!")
+        gui.banner_text.configure(text="It's a draw. Try again!", image='')
         score +=0

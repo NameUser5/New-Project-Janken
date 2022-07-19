@@ -1,3 +1,5 @@
+import gui as g
+
 ROCK = "r"
 PAPER = "p"
 SCISSORS = "s"
@@ -17,6 +19,7 @@ def find_status(user_gambit, cpu_gambit):
     if user_gambit == ROCK:
         if cpu_gambit == ROCK:
             status = DRAW
+            g.background.configure(image=g.rock_draw)
         elif cpu_gambit == PAPER:
             status = LOSE
         else:
