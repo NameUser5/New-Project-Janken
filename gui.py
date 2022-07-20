@@ -3,6 +3,16 @@ import game_logic as gl
 import random
 # from PIL import Image, ImageTK
 
+def cpu_choice():
+    choice = random.choice(gl.gambits)
+    return choice
+
+def user_choice(choice):
+    # print(choice)
+    cpu_current = cpu_choice()
+    result = gl.find_status(choice, cpu_current)
+    print(result)
+    return result
 
 def make_gui():
     window = tk.Tk()
@@ -65,18 +75,18 @@ def make_gui():
     you_lose_banner = tk.PhotoImage(file=r'sprites\Defeat text.png')
 
 # # # Need to add functions to buttons, and timer (with loading animation) # # #
-    click = True
-
-    # gambits = [ROCK, PAPER, SCISSORS]
-
-    def cpu_choice():
-        choice = random.choice(gl.gambits)
-        return choice
-
-    def user_choice(choice):
-        global click
-
-        cpu_current = cpu_choice()
+#     click = True
+#
+#     # gambits = [ROCK, PAPER, SCISSORS]
+#
+#     def cpu_choice():
+#         choice = random.choice(gl.gambits)
+#         return choice
+#
+#     def user_choice(choice):
+#         global click
+#
+#         cpu_current = cpu_choice()
 
 
     rock_photo = tk.PhotoImage(file= r'sprites\rock_button.png')
